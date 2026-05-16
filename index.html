@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jwli - Home</title>
     <style>
-        /* 基础样式复刻 */
+        /* 基础样式复刻与布局优化 */
         body {
             font-family: Arial, sans-serif;
             font-size: 14px;
-            line-height: 1.4;
+            line-height: 1.5;
             color: #000;
             margin: 0;
             padding: 20px;
@@ -17,14 +17,14 @@
         }
         
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
         }
 
         /* 左侧导航栏 */
         .sidebar {
-            width: 140px;
+            width: 150px;
             flex-shrink: 0;
             padding-right: 20px;
             border-right: 1px solid #e0e0e0;
@@ -43,7 +43,7 @@
             margin: 0;
         }
         .nav-links li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         .nav-links a {
             color: #3b5998;
@@ -54,10 +54,12 @@
             text-decoration: underline;
         }
 
-        /* 右侧主要内容区域 */
+        /* 右侧主要内容区域（修复挤压错位） */
         .main-content {
             flex-grow: 1;
-            padding-left: 30px;
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column; /* 强制定向为上下垂直排列，防止内容左右挤压 */
         }
         
         /* 顶部大标题 */
@@ -69,63 +71,32 @@
             margin-bottom: 25px;
         }
 
-        /* 个人基本信息区域 */
-        .profile-container {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-        .profile-img {
-            width: 180px;
-            height: auto;
-            margin-right: 30px;
-            object-fit: cover;
-        }
-        .info-box {
-            font-size: 13px;
-        }
-        .info-box h2 {
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 0;
-            margin-bottom: 12px;
-            color: #000;
-        }
-        .info-box p {
-            margin: 3px 0;
-        }
-        .info-box a {
-            color: #3b5998;
-            text-decoration: none;
-        }
-        .info-box a:hover {
-            text-decoration: underline;
-        }
-
-        /* 板块标题及蓝色分割线 */
+        /* 修复后的研究兴趣板块 */
         .section-title {
             font-size: 15px;
             font-weight: bold;
             color: #3b5998;
             border-bottom: 2px solid #3b5998;
             padding-bottom: 3px;
-            margin-top: 30px;
+            margin-top: 20px;
             margin-bottom: 15px;
+            width: 100%; /* 确保分隔线撑满右侧区域 */
         }
 
-        /* 列表内容样式 */
         .content-text {
             font-size: 13px;
-            margin-bottom: 10px;
+            margin: 0 0 10px 0;
+            max-width: 800px;
         }
+
         .interest-list {
-            margin: 5px 0;
+            margin: 0;
             padding-left: 20px;
         }
         .interest-list li {
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             font-size: 13px;
-            list-style-type: square; /* 使用图中经典的正方形小列表标点 */
+            list-style-type: square; /* 保持图中经典的正方形小列表标点 */
         }
     </style>
 </head>
@@ -152,39 +123,15 @@
         <main class="main-content">
             <h1 class="page-title">Home</h1>
 
-            <!-- 个人基本信息 -->
-            <!--
-            <div class="profile-container">
-                <!-- 提示：请将你的个人照片命名为 profile.jpg 上传到 GitHub 同级目录下 -->
-                <!--img class="profile-img" src="profile.jpg" alt="jwli"-->
-                
-                <!--div class="info-box">
-                    <h2>jwli</h2
-                    <!--
-                    <p><strong>The University of Sydney, Australia</strong></p>
-                    <br>
-                    <p><strong>Address:</strong> Room 315/J12 1 Cleveland St, Darlington, NSW 2008, Australia</p>
-                    -->
-                    <p><strong>E-mail:jwli18 [at] 126.com</p>
-                </div>
-            </div-->
-            -->
-            
-
-            <!-- 研究兴趣板块 -->
+            <!-- 研究兴趣板块（已重构，完美对齐） -->
             <h3 class="section-title">Research Interests</h3>
-            <p class="content-text">jwli's research interests</p>
+            <p class="content-text">jwli's research aims to bridge theory and practice by designing machine learning solutions that work in real-world applications, focusing on</p>
             <ul class="interest-list">
-                <li>explainable artifical intelligence</li>
+                <li>explainable artificial intelligence</li>
                 <li>multi-modality learning (generative models, 3D computer vision),</li>
                 <li>AI for science (electrochemistry),</li>
             </ul>
 
-            <!-- 个人简介板块 -->
-            <!--    
-            <h3 class="section-title">Short Bio</h3>
-            <p class="content-text">这里可以填入你的个人简介（Short Bio）详细文本内容...</p>
-            -->
         </main>
     </div>
 
